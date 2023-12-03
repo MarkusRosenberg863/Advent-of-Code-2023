@@ -20,15 +20,15 @@ def part2():
     
     for (i, line) in enumerate(lines):
         line = (
-            line.replace("one", "1")
-                .replace("two", "2")
-                .replace("three", "3")
-                .replace("four", "4")
-                .replace("five", "5")
-                .replace("six", "6")
-                .replace("seven", "7")
-                .replace("eight", "8")
-                .replace("nine", "9"))
+            line.replace("one", "o1e")
+                .replace("two", "t2o")
+                .replace("three", "t3e")
+                .replace("four", "f4r")
+                .replace("five", "f5e")
+                .replace("six", "s6x")
+                .replace("seven", "s7n")
+                .replace("eight", "e8t")
+                .replace("nine", "n9e"))
         lines[i] = line
        
     result = count_calibrations(lines)
