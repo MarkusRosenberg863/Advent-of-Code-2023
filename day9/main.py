@@ -20,13 +20,9 @@ next_numbers = list(map(lambda x: get_next(generate_differences(x)), sequences))
 
 print(reduce(operator.add, next_numbers))
 
-past_numbers: list[int] = []
-for s in sequences:
-    differences = generate_differences(s)
-    for i in range(len(differences)):
-        if i % 2 == 1:
-            differences[i] = list(map(lambda x: -x, differences[i]))
-    
-    past_numbers.append(get_past(differences))
-    
+past_numbers = [
+    get_past(
+        [list(map(lambda x: -x, d)) if i % 2 == 1 else d for i, d in enumerate(generate_differences(s))]
+    ) for s in sequences]
+
 print(reduce(operator.add, past_numbers))
